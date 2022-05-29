@@ -71,7 +71,7 @@ namespace EntityFrameworkLinQ05
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -104,6 +104,7 @@ namespace EntityFrameworkLinQ05
             this.actualizarDatosDeProductoToolStripMenuItem.Name = "actualizarDatosDeProductoToolStripMenuItem";
             this.actualizarDatosDeProductoToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
             this.actualizarDatosDeProductoToolStripMenuItem.Text = "Actualizar datos de Producto";
+            this.actualizarDatosDeProductoToolStripMenuItem.Click += new System.EventHandler(this.actualizarDatosDeProductoToolStripMenuItem_Click);
             // 
             // comprasVentasToolStripMenuItem
             // 
@@ -117,13 +118,13 @@ namespace EntityFrameworkLinQ05
             // nuevaCompraToolStripMenuItem
             // 
             this.nuevaCompraToolStripMenuItem.Name = "nuevaCompraToolStripMenuItem";
-            this.nuevaCompraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nuevaCompraToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.nuevaCompraToolStripMenuItem.Text = "Nueva Compra";
             // 
             // nuevaVentaToolStripMenuItem
             // 
             this.nuevaVentaToolStripMenuItem.Name = "nuevaVentaToolStripMenuItem";
-            this.nuevaVentaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nuevaVentaToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.nuevaVentaToolStripMenuItem.Text = "Nueva Venta";
             // 
             // productosYStocksToolStripMenuItem
@@ -168,6 +169,7 @@ namespace EntityFrameworkLinQ05
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ventas y Compras de Productos";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

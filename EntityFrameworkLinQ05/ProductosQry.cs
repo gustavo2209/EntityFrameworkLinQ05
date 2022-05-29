@@ -35,7 +35,7 @@ namespace EntityFrameworkLinQ05
             Consulta();
         }
 
-        private void Consulta()
+        public void Consulta()
         {
             using (var db = new ModelCV())
             {

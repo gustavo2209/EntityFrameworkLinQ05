@@ -14,6 +14,7 @@ namespace EntityFrameworkLinQ05
     {
 
         private ProductosQry productosQry;
+        private ProductosUpd productosUpd;
 
         public Form1()
         {
@@ -67,6 +68,23 @@ namespace EntityFrameworkLinQ05
             {
                 MessageBox.Show("Para retirar active el formulario de NUEVO PRODUCTO");
             }
+        }
+
+        private void actualizarDatosDeProductoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(ProductosUpd))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+
+            productosUpd = new ProductosUpd(this);
+            productosUpd.MdiParent = this;
+            productosUpd.Show();
+            productosUpd.BringToFront();
         }
     }
 }
