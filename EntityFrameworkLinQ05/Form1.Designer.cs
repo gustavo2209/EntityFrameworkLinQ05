@@ -118,14 +118,14 @@ namespace EntityFrameworkLinQ05
             // nuevaCompraToolStripMenuItem
             // 
             this.nuevaCompraToolStripMenuItem.Name = "nuevaCompraToolStripMenuItem";
-            this.nuevaCompraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nuevaCompraToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.nuevaCompraToolStripMenuItem.Text = "Nueva Compra";
             this.nuevaCompraToolStripMenuItem.Click += new System.EventHandler(this.nuevaCompraToolStripMenuItem_Click);
             // 
             // nuevaVentaToolStripMenuItem
             // 
             this.nuevaVentaToolStripMenuItem.Name = "nuevaVentaToolStripMenuItem";
-            this.nuevaVentaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nuevaVentaToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.nuevaVentaToolStripMenuItem.Text = "Nueva Venta";
             this.nuevaVentaToolStripMenuItem.Click += new System.EventHandler(this.nuevaVentaToolStripMenuItem_Click);
             // 
@@ -144,12 +144,14 @@ namespace EntityFrameworkLinQ05
             this.productosYStocksToolStripMenuItem1.Name = "productosYStocksToolStripMenuItem1";
             this.productosYStocksToolStripMenuItem1.Size = new System.Drawing.Size(184, 22);
             this.productosYStocksToolStripMenuItem1.Text = "Productos y Stocks";
+            this.productosYStocksToolStripMenuItem1.Click += new System.EventHandler(this.productosYStocksToolStripMenuItem1_Click);
             // 
             // ventasXProductoToolStripMenuItem
             // 
             this.ventasXProductoToolStripMenuItem.Name = "ventasXProductoToolStripMenuItem";
             this.ventasXProductoToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.ventasXProductoToolStripMenuItem.Text = "Ventas X Producto";
+            this.ventasXProductoToolStripMenuItem.Click += new System.EventHandler(this.ventasXProductoToolStripMenuItem_Click);
             // 
             // comprasXProductoToolStripMenuItem
             // 
