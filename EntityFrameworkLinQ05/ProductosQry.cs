@@ -74,7 +74,11 @@ namespace EntityFrameworkLinQ05
             {
                 double precioCompra = Convert.ToDouble(txtPrecioCompra.Text);
                 double precioVenta = precioCompra * 1.2;
-                var producto = new productos { titulo = txtProducto.Text, stock = 0, precioCompra = Convert.ToDecimal(precioCompra.ToString("#,###.00", nfi)), precioVenta = Convert.ToDecimal(precioVenta.ToString("#,###.00", nfi)) };
+                var producto = new productos { titulo = txtProducto.Text, 
+                                               stock = 0, 
+                                               precioCompra = Convert.ToDecimal(precioCompra.ToString("#,###.00", nfi)), 
+                                               precioVenta = Convert.ToDecimal(precioVenta.ToString("#,###.00", nfi)) 
+                                             };
                 db.productos.Add(producto);
                 db.SaveChanges();
 
@@ -116,6 +120,11 @@ namespace EntityFrameworkLinQ05
             {
                 MessageBox.Show("Seleccione fila a retirar");
             }
+        }
+
+        private void ProductosQry_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

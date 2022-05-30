@@ -117,6 +117,7 @@ namespace EntityFrameworkLinQ05
             this.MaximizeBox = false;
             this.Name = "ProductosQry";
             this.Text = "Nuevo Producto";
+            this.Load += new System.EventHandler(this.ProductosQry_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

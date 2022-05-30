@@ -15,6 +15,8 @@ namespace EntityFrameworkLinQ05
 
         private ProductosQry productosQry;
         private ProductosUpd productosUpd;
+        private CompraProductos compraProductos;
+        private VentaProductos ventaProductos;
 
         public Form1()
         {
@@ -85,6 +87,40 @@ namespace EntityFrameworkLinQ05
             productosUpd.MdiParent = this;
             productosUpd.Show();
             productosUpd.BringToFront();
+        }
+
+        private void nuevaCompraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(CompraProductos))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+
+            compraProductos = new CompraProductos(this);
+            compraProductos.MdiParent = this;
+            compraProductos.Show();
+            compraProductos.BringToFront();
+        }
+
+        private void nuevaVentaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(VentaProductos))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+
+            ventaProductos = new VentaProductos(this);
+            ventaProductos.MdiParent = this;
+            ventaProductos.Show();
+            ventaProductos.BringToFront();
         }
     }
 }

@@ -31,12 +31,12 @@ namespace EntityFrameworkLinQ05
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductosUpd));
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtPrecioUpd = new System.Windows.Forms.TextBox();
             this.btnActualizarProducto = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtUpdProducto = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cboProducto = new System.Windows.Forms.ComboBox();
-            this.txtPrecioUpd = new System.Windows.Forms.TextBox();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -53,6 +53,14 @@ namespace EntityFrameworkLinQ05
             this.groupBox3.TabIndex = 16;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Precio:";
+            // 
+            // txtPrecioUpd
+            // 
+            this.txtPrecioUpd.Location = new System.Drawing.Point(18, 36);
+            this.txtPrecioUpd.Name = "txtPrecioUpd";
+            this.txtPrecioUpd.Size = new System.Drawing.Size(328, 23);
+            this.txtPrecioUpd.TabIndex = 17;
+            this.txtPrecioUpd.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // btnActualizarProducto
             // 
@@ -106,13 +114,6 @@ namespace EntityFrameworkLinQ05
             this.cboProducto.Size = new System.Drawing.Size(328, 24);
             this.cboProducto.TabIndex = 0;
             this.cboProducto.SelectionChangeCommitted += new System.EventHandler(this.cboProducto_SelectionChangeCommitted);
-            // 
-            // txtPrecioUpd
-            // 
-            this.txtPrecioUpd.Location = new System.Drawing.Point(18, 36);
-            this.txtPrecioUpd.Name = "txtPrecioUpd";
-            this.txtPrecioUpd.Size = new System.Drawing.Size(328, 23);
-            this.txtPrecioUpd.TabIndex = 17;
             // 
             // ProductosUpd
             // 
