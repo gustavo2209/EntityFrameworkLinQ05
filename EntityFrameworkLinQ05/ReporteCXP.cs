@@ -10,18 +10,18 @@ using System.Windows.Forms;
 
 namespace EntityFrameworkLinQ05
 {
-    public partial class ReporteVXP : Form
+    public partial class ReporteCXP : Form
     {
 
         private Form1 form1;
         private DataTable table;
 
-        public ReporteVXP()
+        public ReporteCXP()
         {
             InitializeComponent();
         }
 
-        public ReporteVXP(Form1 form1)
+        public ReporteCXP(Form1 form1)
         {
             InitializeComponent();
             this.form1 = form1;
@@ -29,7 +29,7 @@ namespace EntityFrameworkLinQ05
             table = new DataTable();
         }
 
-        private void ReporteVXP_Load(object sender, EventArgs e)
+        private void ReporteCXP_Load(object sender, EventArgs e)
         {
             using (var db = new ModelCV())
             {
@@ -44,11 +44,6 @@ namespace EntityFrameworkLinQ05
                 cboProducto.ValueMember = "idproducto";
                 cboProducto.DisplayMember = "producto";
             }
-        }
-
-        private void btnConsultar_Click(object sender, EventArgs e)
-        {
-            Consulta();
         }
 
         private DataTable CreaGrilla(string[] titulos)
@@ -67,16 +62,16 @@ namespace EntityFrameworkLinQ05
             using (var db = new ModelCV())
             {
                 var idproducto = Convert.ToInt32(cboProducto.SelectedValue);
-                DataTable table = CreaGrilla(new string[] { "ID", "Producto", "Cantidad Vendida" });
+                DataTable table = CreaGrilla(new string[] { "ID", "Producto", "Cantidad Comprada" });
 
                 var query = from p in db.productos
                             join m in db.movimientos on p.idproducto equals m.idproducto
-                            where p.idproducto == idproducto && m.cantidad < 0
+                            where p.idproducto == idproducto && m.cantidad > 0
                             select new
                             {
                                 idproducto = p.idproducto,
                                 producto = p.titulo,
-                                cantVendida = Math.Abs(m.cantidad)
+                                cantVendida = m.cantidad
                             };
 
                 foreach (var n in query)
@@ -88,8 +83,13 @@ namespace EntityFrameworkLinQ05
 
                 dgvResultado.Columns["ID"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 dgvResultado.Columns["Producto"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                dgvResultado.Columns["Cantidad Vendida"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvResultado.Columns["Cantidad Comprada"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             }
+        }
+
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            Consulta();
         }
     }
 }

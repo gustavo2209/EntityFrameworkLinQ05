@@ -19,6 +19,7 @@ namespace EntityFrameworkLinQ05
         private VentaProductos ventaProductos;
         private ReporteProdStock reporteProdStock;
         private ReporteVXP reporteVXP;
+        private ReporteCXP reporteCXP;
 
         public Form1()
         {
@@ -157,6 +158,23 @@ namespace EntityFrameworkLinQ05
             reporteVXP.MdiParent = this;
             reporteVXP.Show();
             reporteVXP.BringToFront();
+        }
+
+        private void comprasXProductoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(ReporteCXP))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+
+            reporteCXP = new ReporteCXP(this);
+            reporteCXP.MdiParent = this;
+            reporteCXP.Show();
+            reporteCXP.BringToFront();
         }
     }
 }

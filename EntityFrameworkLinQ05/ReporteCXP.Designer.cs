@@ -1,7 +1,7 @@
 ﻿
 namespace EntityFrameworkLinQ05
 {
-    partial class ReporteVXP
+    partial class ReporteCXP
     {
         /// <summary>
         /// Required designer variable.
@@ -29,15 +29,27 @@ namespace EntityFrameworkLinQ05
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporteVXP));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporteCXP));
+            this.dgvResultado = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.cboProducto = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgvResultado = new System.Windows.Forms.DataGridView();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResultado)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // dgvResultado
+            // 
+            this.dgvResultado.AllowUserToAddRows = false;
+            this.dgvResultado.AllowUserToDeleteRows = false;
+            this.dgvResultado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvResultado.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvResultado.Location = new System.Drawing.Point(0, 74);
+            this.dgvResultado.Name = "dgvResultado";
+            this.dgvResultado.ReadOnly = true;
+            this.dgvResultado.Size = new System.Drawing.Size(517, 376);
+            this.dgvResultado.TabIndex = 3;
             // 
             // groupBox1
             // 
@@ -49,7 +61,7 @@ namespace EntityFrameworkLinQ05
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(517, 74);
-            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Seleccione Producto";
             // 
@@ -81,19 +93,7 @@ namespace EntityFrameworkLinQ05
             this.label1.TabIndex = 0;
             this.label1.Text = "Producto:";
             // 
-            // dgvResultado
-            // 
-            this.dgvResultado.AllowUserToAddRows = false;
-            this.dgvResultado.AllowUserToDeleteRows = false;
-            this.dgvResultado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvResultado.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvResultado.Location = new System.Drawing.Point(0, 74);
-            this.dgvResultado.Name = "dgvResultado";
-            this.dgvResultado.ReadOnly = true;
-            this.dgvResultado.Size = new System.Drawing.Size(517, 376);
-            this.dgvResultado.TabIndex = 1;
-            // 
-            // ReporteVXP
+            // ReporteCXP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -104,22 +104,22 @@ namespace EntityFrameworkLinQ05
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "ReporteVXP";
-            this.Text = "Reporte de Ventas por Producto";
-            this.Load += new System.EventHandler(this.ReporteVXP_Load);
+            this.Name = "ReporteCXP";
+            this.Text = "Reporte de Compras por Producto";
+            this.Load += new System.EventHandler(this.ReporteCXP_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResultado)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvResultado)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
+        private System.Windows.Forms.DataGridView dgvResultado;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.ComboBox cboProducto;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dgvResultado;
     }
 }

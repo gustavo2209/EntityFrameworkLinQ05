@@ -158,6 +158,7 @@ namespace EntityFrameworkLinQ05
             this.comprasXProductoToolStripMenuItem.Name = "comprasXProductoToolStripMenuItem";
             this.comprasXProductoToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.comprasXProductoToolStripMenuItem.Text = "Compras X Producto";
+            this.comprasXProductoToolStripMenuItem.Click += new System.EventHandler(this.comprasXProductoToolStripMenuItem_Click);
             // 
             // Form1
             // 
