@@ -77,7 +77,7 @@ namespace EntityFrameworkLinQ05
 
                 foreach (DataGridViewRow row in dgvProductos.Rows)
                 {
-                    total += Convert.ToInt32(row.Cells["SubTotal"].Value);
+                    total += Convert.ToDouble(row.Cells["SubTotal"].Value);
                 }
 
                 txtTotal.Text = total.ToString("#,###.00", nfi);
