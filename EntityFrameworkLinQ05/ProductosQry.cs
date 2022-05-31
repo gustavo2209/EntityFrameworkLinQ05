@@ -72,23 +72,41 @@ namespace EntityFrameworkLinQ05
         {
             using (var db = new ModelCV())
             {
-                double precioCompra = Convert.ToDouble(txtPrecioCompra.Text);
-                double precioVenta = precioCompra * 1.2;
-                var producto = new productos { titulo = txtProducto.Text, 
-                                               stock = 0, 
-                                               precioCompra = Convert.ToDecimal(precioCompra.ToString("#,###.00", nfi)), 
-                                               precioVenta = Convert.ToDecimal(precioVenta.ToString("#,###.00", nfi)) 
-                                             };
-                db.productos.Add(producto);
-                db.SaveChanges();
+                if (txtProducto.Text.Length > 0)
+                {
+                    if (txtPrecioCompra.Text.Length > 0)
+                    {
+                        double precioCompra = Convert.ToDouble(txtPrecioCompra.Text);
+                        double precioVenta = precioCompra * 1.2;
+                        var producto = new productos
+                        {
+                            titulo = txtProducto.Text,
+                            stock = 0,
+                            precioCompra = Convert.ToDecimal(precioCompra.ToString("#,###.00", nfi)),
+                            precioVenta = Convert.ToDecimal(precioVenta.ToString("#,###.00", nfi))
+                        };
+                        db.productos.Add(producto);
+                        db.SaveChanges();
 
-                MessageBox.Show("Registro grabado correctamente");
+                        MessageBox.Show("Registro grabado correctamente");
 
-                Consulta();
+                        Consulta();
 
-                txtProducto.Text = "";
-                txtPrecioCompra.Text = "";
-                txtProducto.Focus();
+                        txtProducto.Text = "";
+                        txtPrecioCompra.Text = "";
+                        txtProducto.Focus();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ingrese precio del producto " + txtProducto.Text.ToUpper());
+                        txtPrecioCompra.Focus();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Ingrese nombre del Producto");
+                    txtProducto.Focus();
+                }
             }
         }
 

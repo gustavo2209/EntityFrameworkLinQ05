@@ -60,18 +60,20 @@ namespace EntityFrameworkLinQ05
             table.Columns.Add("SubTotal", System.Type.GetType("System.String"));
 
             dgvProductos.DataSource = table;
+
+            txtCantidad.Focus();
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
             using (var db = new ModelCV())
             {
-                int total = 0;
+                double total = 0;
                 int idproducto = Convert.ToInt32(cboProducto.SelectedValue.ToString());
                 var producto = db.productos.Find(idproducto);
                 var subtotal = Convert.ToDouble(producto.precioCompra) * Convert.ToInt32(txtCantidad.Text);
 
-                table.Rows.Add(cboProducto.SelectedValue, cboProducto.Text, Convert.ToInt32(txtCantidad.Text), producto.precioCompra.ToString("#,###.00", nfi), subtotal);
+                table.Rows.Add(cboProducto.SelectedValue, cboProducto.Text, Convert.ToInt32(txtCantidad.Text), producto.precioCompra.ToString("#,###.00", nfi), subtotal.ToString("#,###", nfi));
 
                 foreach (DataGridViewRow row in dgvProductos.Rows)
                 {
@@ -79,7 +81,8 @@ namespace EntityFrameworkLinQ05
                 }
 
                 txtTotal.Text = total.ToString("#,###.00", nfi);
-                //txtCantidad.Text = "";
+                txtCantidad.Text = "";
+                txtCantidad.Focus();
             }
         }
 
