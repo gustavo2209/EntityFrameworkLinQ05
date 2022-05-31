@@ -34,6 +34,8 @@ namespace EntityFrameworkLinQ05
             nfi.NumberDecimalSeparator = ".";
 
             table = new DataTable();
+
+            txtCantidad.Focus();
         }
 
         private void CompraProductos_Load(object sender, EventArgs e)
@@ -123,6 +125,11 @@ namespace EntityFrameworkLinQ05
             }
 
             this.Dispose();
+        }
+
+        private void cboProducto_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            txtCantidad.Focus();
         }
     }
 }

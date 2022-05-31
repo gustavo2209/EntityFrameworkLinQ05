@@ -139,6 +139,7 @@ namespace EntityFrameworkLinQ05
             this.cboProducto.Name = "cboProducto";
             this.cboProducto.Size = new System.Drawing.Size(272, 24);
             this.cboProducto.TabIndex = 9;
+            this.cboProducto.SelectionChangeCommitted += new System.EventHandler(this.cboProducto_SelectionChangeCommitted);
             // 
             // VentaProductos
             // 

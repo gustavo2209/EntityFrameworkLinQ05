@@ -73,7 +73,7 @@ namespace EntityFrameworkLinQ05
                 var producto = db.productos.Find(idproducto);
                 var subtotal = Convert.ToDouble(producto.precioCompra) * Convert.ToInt32(txtCantidad.Text);
 
-                table.Rows.Add(cboProducto.SelectedValue, cboProducto.Text, Convert.ToInt32(txtCantidad.Text), producto.precioCompra.ToString("#,###.00", nfi), subtotal.ToString("#,###", nfi));
+                table.Rows.Add(cboProducto.SelectedValue, cboProducto.Text, Convert.ToInt32(txtCantidad.Text), producto.precioCompra.ToString("#,###.00", nfi), subtotal.ToString("#,###.00", nfi));
 
                 foreach (DataGridViewRow row in dgvProductos.Rows)
                 {
@@ -124,6 +124,11 @@ namespace EntityFrameworkLinQ05
             }
 
             this.Dispose();
+        }
+
+        private void cboProducto_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            txtCantidad.Focus();
         }
     }
 }
